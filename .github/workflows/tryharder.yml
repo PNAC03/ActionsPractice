@@ -1,26 +1,26 @@
 name: tryingharder
 on: push
 jobs:
-  job1:
-    name: print_win
+  ubuntu:
+    name: print_linux
     runs-on: ubuntu-latest
     steps: 
       - name: printdate1
         run: date
-  job2:
-    name: printdate2
+  windows:
+    name: print_win
     runs-on: windows-latest
     steps: 
       - name: printdate2
         run: Get-Date
-  job3:
-    name: printdate3
+  macintosh:
+    name: print_mac
     runs-on: macos-latest
     steps: 
       - name: printdate3
         run: date
-  job4:
-   name: printdate4
+  depends:
+   name: print_win_seq
    needs: [job1, job2, job3]
    runs-on: windows-latest
    steps: 
