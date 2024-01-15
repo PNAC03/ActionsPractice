@@ -1,4 +1,5 @@
 jobs:
+  on: [push]
   job1:
     name: First Job
     runs-on: ubuntu-latest
