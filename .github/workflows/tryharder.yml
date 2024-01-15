@@ -21,7 +21,7 @@ jobs:
         run: date
   depends:
    name: print_win_seq
-   needs: [job1, job2, job3]
+   needs: [ubuntu, windows, macintosh]
    runs-on: windows-latest
    steps: 
       - name: printdate3
