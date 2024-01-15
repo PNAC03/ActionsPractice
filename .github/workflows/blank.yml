@@ -1,0 +1,17 @@
+jobs:
+  job1:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step one
+        run: echo "executing one .... " > flowlogs.txt
+      - name: Step two
+        run: echo "executing two .... " >> flowlogs.txt
+  job2:
+    name: Second Job
+    runs-on: windows-latest
+    steps:
+      - name: Step one
+        run: "Get-Service | Format-List"
+      - name: Step two
+        run: "Get-ChildItem Env: | Sort-Object Name"
