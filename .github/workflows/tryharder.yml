@@ -1,0 +1,20 @@
+name: tryingharder
+on: push
+jobs:
+  job1:
+    - name: printdate1
+    - runs-on: ubuntu-latest
+    - run: date
+  job2:
+    - name: printdate2
+    - runs-on: windows-latest
+    - run: Get-Date
+  job3:
+    - name: printdate3
+    - runs-on: macos-latest
+    - run: date
+  job4:
+   - name: printdate4
+   - needs: [job1, job2, job3]
+   - runs-on: windows-latest
+   - run: whoami
