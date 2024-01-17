@@ -7,7 +7,7 @@ env:
 
 jobs:
   main: 
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: display date
         uses: actions/checkout@v2
