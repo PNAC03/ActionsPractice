@@ -1,0 +1,20 @@
+name: artifacts
+
+on: push
+
+env:
+  ARTIFACT_NAME: myartifact
+
+job:
+  main: 
+    runs-on: debian-latest
+    steps: 
+      - name: display date
+        uses: actions/checkout@v2
+        run: date
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with: 
+          name: ${{env.ARTIFACT_NAME}}
+          path: . 
+
